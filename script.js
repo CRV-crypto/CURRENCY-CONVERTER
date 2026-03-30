@@ -1,7 +1,19 @@
 let fromCurrency = document.getElementById("fromCurrency");
 let toCurrency = document.getElementById("toCurrency");
 
-// Load ALL currencies
+// START BUTTON FUNCTION
+function startApp() {
+    document.getElementById("startScreen").style.display = "none";
+    document.getElementById("loadingScreen").style.display = "flex";
+
+    setTimeout(() => {
+        document.getElementById("loadingScreen").style.display = "none";
+        document.getElementById("appScreen").style.display = "flex";
+        loadCurrencies();
+    }, 1500);
+}
+
+// LOAD ALL CURRENCIES
 async function loadCurrencies() {
     let res = await fetch("https://open.er-api.com/v6/latest/USD");
     let data = await res.json();
@@ -17,9 +29,7 @@ async function loadCurrencies() {
     toCurrency.value = "INR";
 }
 
-loadCurrencies();
-
-// Convert
+// CONVERT
 async function convert() {
     let amount = document.getElementById("amount").value;
     let from = fromCurrency.value;
@@ -42,14 +52,14 @@ async function convert() {
         `💰 ${amount} ${from} = ${result.toFixed(2)} ${to}`;
 }
 
-// Swap
+// SWAP
 function swap() {
     let temp = fromCurrency.value;
     fromCurrency.value = toCurrency.value;
     toCurrency.value = temp;
 }
 
-// Dark Mode
+// DARK MODE
 function toggleMode() {
     document.body.classList.toggle("dark");
 }
