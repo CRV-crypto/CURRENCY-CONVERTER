@@ -1,26 +1,37 @@
 body {
     margin: 0;
     font-family: Arial;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
     background: #f5f5f5;
 }
 
-/* Center container */
-.container {
-    position: relative;
+/* Screens */
+.screen {
+    width: 350px;
+    height: 600px;
+    background: white;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    animation: fade 0.5s;
+}
+
+/* Animation */
+@keyframes fade {
+    from {opacity:0; transform: scale(0.9);}
+    to {opacity:1; transform: scale(1);}
 }
 
 /* Card */
 .card {
-    background: white;
-    padding: 30px;
-    border-radius: 20px;
-    width: 320px;
+    width: 80%;
     text-align: center;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
 /* Inputs */
@@ -36,23 +47,11 @@ input, select, button {
     gap: 10px;
 }
 
-/* Convert button */
-.convert-btn {
-    background: #1a73e8;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-}
-
 /* Toggle button */
 .toggle {
     position: absolute;
-    top: -40px;
-    right: 0;
-    border: none;
-    padding: 8px 12px;
-    cursor: pointer;
+    top: 20px;
+    right: 20px;
 }
 
 /* DARK MODE */
@@ -60,7 +59,7 @@ input, select, button {
     background: #121212;
 }
 
-.dark .card {
+.dark .screen {
     background: #1e1e1e;
     color: white;
 }
@@ -68,5 +67,4 @@ input, select, button {
 .dark input, .dark select {
     background: #333;
     color: white;
-    border: none;
 }
