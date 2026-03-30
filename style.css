@@ -1,0 +1,72 @@
+body {
+    margin: 0;
+    font-family: Arial;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #f5f5f5;
+}
+
+/* Center container */
+.container {
+    position: relative;
+}
+
+/* Card */
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    width: 320px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* Inputs */
+input, select, button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+/* Row */
+.row {
+    display: flex;
+    gap: 10px;
+}
+
+/* Convert button */
+.convert-btn {
+    background: #1a73e8;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* Toggle button */
+.toggle {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+/* DARK MODE */
+.dark {
+    background: #121212;
+}
+
+.dark .card {
+    background: #1e1e1e;
+    color: white;
+}
+
+.dark input, .dark select {
+    background: #333;
+    color: white;
+    border: none;
+}

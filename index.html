@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Currency Converter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Dark Mode Button -->
+    <button class="toggle" onclick="toggleMode()">🌙</button>
+
+    <div class="card">
+        <h1>💱 Currency Converter</h1>
+
+        <input type="number" id="amount" placeholder="Enter amount">
+
+        <div class="row">
+            <select id="fromCurrency"></select>
+            <button onclick="swap()">⇄</button>
+            <select id="toCurrency"></select>
+        </div>
+
+        <button class="convert-btn" onclick="convert()">Convert</button>
+
+        <h2 id="result"></h2>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
