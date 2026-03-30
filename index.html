@@ -6,13 +6,24 @@
 </head>
 <body>
 
-<div class="container">
+<!-- START SCREEN -->
+<div id="startScreen" class="screen">
+    <h1>💱 Currency Converter</h1>
+    <button onclick="startApp()">Start</button>
+</div>
 
-    <!-- Dark Mode Button -->
+<!-- LOADING -->
+<div id="loadingScreen" class="screen" style="display:none;">
+    <h2>Loading... ⏳</h2>
+</div>
+
+<!-- MAIN APP -->
+<div id="appScreen" class="screen" style="display:none;">
+
     <button class="toggle" onclick="toggleMode()">🌙</button>
 
     <div class="card">
-        <h1>💱 Currency Converter</h1>
+        <h2>Convert Currency</h2>
 
         <input type="number" id="amount" placeholder="Enter amount">
 
@@ -22,7 +33,7 @@
             <select id="toCurrency"></select>
         </div>
 
-        <button class="convert-btn" onclick="convert()">Convert</button>
+        <button onclick="convert()">Convert</button>
 
         <h2 id="result"></h2>
     </div>
